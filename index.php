@@ -10,6 +10,7 @@
     if (!$ssh->login('root', 'CYGr%@dOYHc0')) {
         echo "Login Failed";
     }
+    echo $ssh->exec("cd /prjct/'.$ms.'");
     echo $ssh->exec('ls');
     echo $ssh->exec('exit');
 ?>
