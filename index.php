@@ -6,21 +6,12 @@
     $ms = $_GET['ms'];
     echo $ms;
     echo "<br>";
-    // include('Net/SSH2.php');
-    // $ssh = new Net_SSH2('103.152.118.253', 22);
-    // if (!$ssh->login('root', 'CYGr%@dOYHc0')) {
-    //     echo "Login Failed";
-    // }
+    include('Net/SSH2.php');
+    $ssh = new Net_SSH2('103.152.118.253', 22);
+    if (!$ssh->login('root', 'CYGr%@dOYHc0')) {
+        echo "Login Failed";
+    }
 
-    // echo $ssh->exec('cd prjct/"'.$ms.'"; ls');
-    // echo $ssh->exec('exit');
-
-    $connection = ssh2_connect('103.152.118.253', 22);
-    ssh2_auth_password($connection, 'root', 'CYGr%@dOYHc0');
-
-    $stream1 = ssh2_exec($connection, 'cd /etc');
-    echo $stream1;
-
-    $stream2 = ssh2_exec($connection, 'ls');
-    echo $stream2;
+    echo $ssh->exec('cd prjct/"'.$ms.'"; ls');
+    echo $ssh->exec('exit');
 ?>
