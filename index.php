@@ -11,10 +11,8 @@
     if (!$ssh->login('root', 'CYGr%@dOYHc0')) {
         echo "Login Failed";
     }
-    $stream1 = $ssh->exec('ls');
-    stream_set_blocking($stream1, true);
-    $output1 = stream_get_contents($stream1);
-    print_r($output);
     
+    $output1 = stream_get_contents($ssh->exec('ls'););
+    print_r($output1);
     echo $ssh->exec('exit');
 ?>
