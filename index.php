@@ -3,9 +3,6 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    $filename = "Log/depyloy.log";
-    $fh = fopen($filename, "a") or die("Could not open log file.");
-
     $ms = $_GET['ms'];
     echo $ms;
     include('Net/SSH2.php');
