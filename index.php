@@ -9,5 +9,5 @@
         echo "Login Failed";
     }
     echo $ssh->exec('ls');
-    echo $ssh->exec('logout');
+    echo $ssh->exec('exit');
 ?>
