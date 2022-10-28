@@ -3,6 +3,11 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+    $filename = "Log/depyloy.log";
+    $fh = fopen($filename, "a") or die("Could not open log file.");
+
+    $ms = $_GET['ms'];
+    echo $ms;
     include('Net/SSH2.php');
     $ssh = new Net_SSH2('103.152.118.253', 22);
     if (!$ssh->login('root', 'CYGr%@dOYHc0')) {
