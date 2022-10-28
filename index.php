@@ -5,6 +5,7 @@
 
     $ms = $_GET['ms'];
     echo $ms;
+    echo "<br>"
     include('Net/SSH2.php');
     $ssh = new Net_SSH2('103.152.118.253', 22);
     if (!$ssh->login('root', 'CYGr%@dOYHc0')) {
