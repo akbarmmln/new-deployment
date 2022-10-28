@@ -12,6 +12,6 @@
         echo "Login Failed";
     }
 
-    echo $ssh->exec('cd prjct; ls');
+    echo $ssh->exec('cd prjct/"'.$ms.'"; ls');
     echo $ssh->exec('exit');
 ?>
