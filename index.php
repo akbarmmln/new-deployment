@@ -7,11 +7,15 @@
     echo $ms;
     echo "<br>";
     include('Net/SSH2.php');
-    $ssh = new Net_SSH2('103.152.118.253', 22);
-    if (!$ssh->login('root', 'CYGr%@dOYHc0')) {
-        echo "Login Failed";
-    }
-    echo $ssh->exec('prjct/4yur-dev-ms-one');
-    echo $ssh->exec('ls');
-    echo $ssh->exec('exit');
+    $connection = ssh2_connect('103.152.118.253', 22);
+    ssh2_auth_password($connection, 'root', 'CYGr%@dOYHc0');
+
+    $stream1 = ssh2_exec($connection, 'cd prjct/4yur-dev-ms-one');
+    echo $stream1;
+
+    $stream2 = ssh2_exec($connection, 'ls');
+    echo $stream2;
+
+    $stream3 = ssh2_exec($connection, 'exit');
+    echo $stream3;
 ?>
