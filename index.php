@@ -29,5 +29,6 @@
     $result_err = stream_get_contents($err_stream);
 
     echo 'stderr: ' . $result_err;
+    echo "<br>";
     echo 'stdio : ' . $result_dio;
 ?>
