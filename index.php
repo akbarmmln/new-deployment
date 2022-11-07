@@ -60,8 +60,8 @@
     stream_set_blocking($sio_step3, true);
     stream_set_blocking($err_step3, true);
 
-    $result_dio_step2 = stream_get_contents($sio_step3);
-    $result_err_step2 = stream_get_contents($err_step3);
+    $result_dio_step3 = stream_get_contents($sio_step3);
+    $result_err_step3 = stream_get_contents($err_step3);
 
     echo 'stdio : ' . $result_dio_step3;
     echo "<br>";
