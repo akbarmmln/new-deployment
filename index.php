@@ -33,6 +33,8 @@
     echo "<br>";
     echo 'stderr: ' . $result_err_step1;
 
+    echo "<br><br>";
+
     echo "step: list folder project <br>";
     $step2 = ssh2_exec($connection, 'ls');
     $sio_step2 = ssh2_fetch_stream($step2, SSH2_STREAM_STDIO);
