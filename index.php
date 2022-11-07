@@ -19,7 +19,7 @@
     ssh2_auth_password($connection, 'root', 'CYGr%@dOYHc0');
 
     echo "step: masuk ke lokasi project <br>";
-    $step1 = ssh2_exec($connection, 'cd microservices/"'.$ms.'"');
+    $step1 = ssh2_exec($connection, 'cd microservices/"'.$ms.'"; ls');
     $sio_step1 = ssh2_fetch_stream($step1, SSH2_STREAM_STDIO);
     $err_step1 = ssh2_fetch_stream($step1, SSH2_STREAM_STDERR);
 
