@@ -18,7 +18,7 @@
     $connection = ssh2_connect('103.152.118.253', 22);
     ssh2_auth_password($connection, 'root', 'CYGr%@dOYHc0');
 
-    echo "step: masuk ke lokasi project <br>";
+    echo "step: masuk ke lokasi project & list folder project <br>";
     $step1 = ssh2_exec($connection, 'cd microservices/"'.$ms.'"; ls');
     $sio_step1 = ssh2_fetch_stream($step1, SSH2_STREAM_STDIO);
     $err_step1 = ssh2_fetch_stream($step1, SSH2_STREAM_STDERR);
@@ -35,8 +35,8 @@
 
     echo "<br><br>";
 
-    echo "step: list folder project <br>";
-    $step2 = ssh2_exec($connection, 'ls');
+    echo "step: masuk ke branch main dan update repository branch main <br>";
+    $step2 = ssh2_exec($connection, 'cd microservices/"'.$ms.'"; git checkout main; git pull origin main;');
     $sio_step2 = ssh2_fetch_stream($step2, SSH2_STREAM_STDIO);
     $err_step2 = ssh2_fetch_stream($step2, SSH2_STREAM_STDERR);
 
